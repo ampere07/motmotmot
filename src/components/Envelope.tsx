@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './Envelope.css';
 
 const Envelope: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const [isLetterVisible, setIsLetterVisible] = useState(false);
 
   const handleEnvelopeClick = () => {
-    if (!isOpen) {
-      setIsOpen(true);
+    if (!isLetterVisible) {
+      setIsLetterVisible(true);
     }
   };
 
@@ -23,7 +24,7 @@ const Envelope: React.FC = () => {
         </div>
       </div>
       
-      <div className={`letter ${isOpen ? 'letter-open' : ''}`}>
+      <div className={`letter ${isLetterVisible ? 'letter-open' : ''}`}>
         <div className="letter-content">
           <h1>Happy Monthsary</h1>
           <p>
